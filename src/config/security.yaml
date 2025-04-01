@@ -1,0 +1,5 @@
+services:
+    LibertJeremy\Symfony\SecurityHelpersBundle\Security\:
+        autoconfigure: true
+        autowire: true
+        resource: '../src/Security/'
