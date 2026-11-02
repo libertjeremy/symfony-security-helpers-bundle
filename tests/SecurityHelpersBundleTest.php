@@ -189,8 +189,9 @@ final class SecurityHelpersBundleTest extends TestCase
     private function load(array $config, bool $public = false): ContainerBuilder
     {
         $container = new ContainerBuilder();
-        $container->setParameter('kernel.environment', 'test');
-        $container->setParameter('kernel.debug', false);
+        foreach (['kernel.environment' => 'test', 'kernel.debug' => false, 'kernel.project_dir' => __DIR__, 'kernel.cache_dir' => sys_get_temp_dir(), 'kernel.build_dir' => sys_get_temp_dir()] as $name => $value) {
+            $container->setParameter($name, $value);
+        }
 
         $extension = (new SecurityHelpersBundle())->getContainerExtension();
         self::assertNotNull($extension);
