@@ -29,12 +29,12 @@ final class TestKernel extends Kernel
 
     public function getCacheDir(): string
     {
-        return sys_get_temp_dir().'/security-helpers-bundle/cache';
+        return sys_get_temp_dir().'/security-helpers-bundle/'.self::VERSION.'/cache';
     }
 
     public function getLogDir(): string
     {
-        return sys_get_temp_dir().'/security-helpers-bundle/log';
+        return sys_get_temp_dir().'/security-helpers-bundle/'.self::VERSION.'/log';
     }
 
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void
