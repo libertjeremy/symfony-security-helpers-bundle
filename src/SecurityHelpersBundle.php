@@ -24,6 +24,9 @@ final class SecurityHelpersBundle extends AbstractBundle
         SecurityHeadersConfiguration::define($definition->rootNode()->children());
     }
 
+    /**
+     * @param array<string, mixed> $config
+     */
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         parent::loadExtension($config, $container, $builder);
